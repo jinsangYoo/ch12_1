@@ -8,6 +8,7 @@ import RepoMenu from './RepoMenu'
 import UserRepositories from './UseRepositories'
 import RepositoryReadme from './RespositoryReadme'
 import ColorDetails from './ColorDetails'
+import Menu from './Menu'
 
 export {
   AddColorForm,
@@ -17,6 +18,7 @@ export {
   tahoe_peaks,
   List,
   Fetch,
+  Menu,
   RepoMenu,
   UserRepositories,
   RepositoryReadme,
