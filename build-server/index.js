@@ -16,7 +16,7 @@
   \*************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var express__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! express */ \"express\");\n/* harmony import */ var express__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(express__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var react_dom_server__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom/server */ \"react-dom/server\");\n/* harmony import */ var react_dom_server__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dom_server__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _src_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../src/components */ \"./src/components/index.js\");\n/* harmony import */ var _src_data_recipes_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../src/data/recipes.json */ \"./src/data/recipes.json\");\nvar _jsxFileName = \"/Users/jinsangyoo/Desktop/Project/ch12_1.git/server/index.js\";\n\n\n\n\n\nconst app = express__WEBPACK_IMPORTED_MODULE_0___default()();\nconst PORT = process.env.PORT || 4000; // const PORT = 4000\n\napp.use(express__WEBPACK_IMPORTED_MODULE_0___default()[\"static\"]('./build'));\napp.get('/*', (req, res) => {\n  const app = react_dom_server__WEBPACK_IMPORTED_MODULE_2___default().renderToString( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_src_components__WEBPACK_IMPORTED_MODULE_3__.Menu, {\n    recipes: _src_data_recipes_json__WEBPACK_IMPORTED_MODULE_4__,\n    __self: undefined,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 14,\n      columnNumber: 45\n    }\n  }));\n});\napp.listen(PORT, () => console.log(`Server is listening on port ${PORT}`));\n\n//# sourceURL=webpack://ch12_1.git/./server/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var express__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! express */ \"express\");\n/* harmony import */ var express__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(express__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var react_dom_server__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom/server */ \"react-dom/server\");\n/* harmony import */ var react_dom_server__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dom_server__WEBPACK_IMPORTED_MODULE_2__);\nObject(function webpackMissingModule() { var e = new Error(\"Cannot find module './data/recipes.json'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }());\n/* harmony import */ var _src_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../src/components */ \"./src/components/index.js\");\n/* harmony import */ var fs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! fs */ \"fs\");\n/* harmony import */ var fs__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(fs__WEBPACK_IMPORTED_MODULE_5__);\nvar _jsxFileName = \"/Users/jinsangyoo/Desktop/Project/ch12_1.git/server/index.js\";\n\n\n\n\n\n\nconst app = express__WEBPACK_IMPORTED_MODULE_0___default()();\nconst PORT = process.env.PORT || 4000;\nconsole.log(`Server is listening on port ${PORT}`);\napp.use(express__WEBPACK_IMPORTED_MODULE_0___default()[\"static\"]('./build'));\napp.get('/*', (req, res) => {\n  const app = react_dom_server__WEBPACK_IMPORTED_MODULE_2___default().renderToString( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_src_components__WEBPACK_IMPORTED_MODULE_4__.Menu, {\n    recipes: Object(function webpackMissingModule() { var e = new Error(\"Cannot find module './data/recipes.json'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }()),\n    __self: undefined,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 15,\n      columnNumber: 45\n    }\n  }));\n  const indexFile = path.resolve('./build/index.html');\n  fs__WEBPACK_IMPORTED_MODULE_5___default().readFile(indexFile, 'utf8', (err, data) => {\n    return res.send(data.replace('<div id=\"root\"></div>', `<div id=\"root\">${app}</div>`));\n  });\n});\napp.listen(PORT, () => console.log(`Server is listening on port ${PORT}`));\n\n//# sourceURL=webpack://ch12_1.git/./server/index.js?");
 
 /***/ }),
 
@@ -350,6 +350,16 @@ module.exports = require("uuid");
 
 /***/ }),
 
+/***/ "fs":
+/*!*********************!*\
+  !*** external "fs" ***!
+  \*********************/
+/***/ ((module) => {
+
+module.exports = require("fs");
+
+/***/ }),
+
 /***/ "./src/data/color-data.json":
 /*!**********************************!*\
   !*** ./src/data/color-data.json ***!
@@ -357,16 +367,6 @@ module.exports = require("uuid");
 /***/ ((module) => {
 
 eval("module.exports = JSON.parse('{\"colors\":[{\"id\":\"01\",\"title\":\"해질녘 바다\",\"color\":\"#00c4e2\",\"rating\":5},{\"id\":\"83\",\"title\":\"잔디\",\"color\":\"#26ac56\",\"rating\":3},{\"id\":\"a1\",\"title\":\"밝은 빨강\",\"color\":\"#ff0000\",\"rating\":0}]}');\n\n//# sourceURL=webpack://ch12_1.git/./src/data/color-data.json?");
-
-/***/ }),
-
-/***/ "./src/data/recipes.json":
-/*!*******************************!*\
-  !*** ./src/data/recipes.json ***!
-  \*******************************/
-/***/ ((module) => {
-
-eval("module.exports = JSON.parse('[{\"name\":\"구운 연어\",\"ingredients\":[{\"name\":\"연어\",\"amount\":500,\"measurement\":\"그램\"},{\"name\":\"잣\",\"amount\":1,\"measurement\":\"컵\"},{\"name\":\"버터 상추\",\"amount\":2,\"measurement\":\"컵\"},{\"name\":\"옐로 스쿼시(Yellow Squash, 호박의 한 종류)\",\"amount\":1,\"measurement\":\"개\"},{\"name\":\"올리브 오일\",\"amount\":0.5,\"measurement\":\"컵\"},{\"name\":\"마늘\",\"amount\":3,\"measurement\":\"쪽\"}],\"steps\":[\"오븐을 350도로 예열한다.\",\"유리 베이킹 그릇에 올리브 오일을 두른다.\",\"연어, 마늘, 잣을 그릇에 담는다.\",\"오븐에서 15분간 익힌다.\",\"옐로 스쿼시를 추가하고 다시 30분간 오븐에서 익힌다.\",\"오븐에서 그릇을 꺼내서 15분간 식힌 다음에 상추를 곁들여서 내놓는다.\"]},{\"name\":\"생선 타코\",\"ingredients\":[{\"name\":\"흰살 생선\",\"amount\":500,\"measurement\":\"그램\"},{\"name\":\"치즈\",\"amount\":1,\"measurement\":\"컵\"},{\"name\":\"아이스버그 상추\",\"amount\":2,\"measurement\":\"컵\"},{\"name\":\"토마토\",\"amount\":2,\"measurement\":\"개(큰 것)\"},{\"name\":\"또띠야\",\"amount\":3,\"measurement\":\"개\"}],\"steps\":[\"생선을 그릴에 익힌다.\",\"또띠야 3장 위에 생선을 얹는다.\",\"또띠야에 얹은 생선 위에 상추, 토마토, 치즈를 얹는다.\"]}]');\n\n//# sourceURL=webpack://ch12_1.git/./src/data/recipes.json?");
 
 /***/ })
 
